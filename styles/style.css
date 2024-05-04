@@ -154,18 +154,16 @@ body {
   position: absolute;
   left: 10%;
   transform: translateX(-50%);
-  /* Asegúrate de que el título tiene suficiente contraste y visibilidad */
-  color: #000000; /* o cualquier color que combine con tu barra de navegación */
-  font-size: 1.5rem; /* o el tamaño que se ajuste a tu diseño */
+  color: #000000; 
+  font-size: 1.5rem; 
 }
 
 .profile-title2 {
   position: absolute;
   left: 12%;
   transform: translateX(-50%);
-  /* Asegúrate de que el título tiene suficiente contraste y visibilidad */
-  color: #000000; /* o cualquier color que combine con tu barra de navegación */
-  font-size: 1.5rem; /* o el tamaño que se ajuste a tu diseño */
+  color: #000000; 
+  font-size: 1.5rem; 
 }
 
 
@@ -191,7 +189,7 @@ body {
   width: 100%;
 }
 .search ion-icon {
-  position: absolute; /* Posicionamiento absoluto del ícono respecto a su contenedor .search */
+  position: absolute; /* Posiciona el ícono de búsqueda */
   right: 10px; /* Coloca el ícono a la derecha del campo de búsqueda */
   top: 50%; /* Inicia la posición en el 50% de la altura del contenedor */
   transform: translateY(75%); /* Ajusta el ícono hacia arriba en un 50% de su altura para centrarlo verticalmente */
@@ -426,127 +424,6 @@ body {
   border-radius: 6px;
 }
 
-.availableCourses .cardHeader {
-  /* Reducir o eliminar el margen/padding superior */
-  margin-top: 0;
-  padding-top: 0;
-}
-
-.availableCourses table tr:last-child {
-  /* Aumentar el margen/padding inferior del último elemento de la tabla */
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-}
-
-
-.details table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-}
-.details table thead td {
-  font-weight: 600;
-}
-.details .recentMessages table tr {
-  color: var(--black1);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-.details .recentMessages table tr:last-child {
-  border-bottom: none;
-}
-.details .recentMessages table tbody tr:hover {
-  background: var(--blue);
-  color: var(--white);
-}
-.details .recentMessages table tr td {
-  padding: 10px;
-}
-.details .recentMessages table tr td:last-child {
-  text-align: end;
-}
-.details .recentMessages table tr td:nth-child(2) {
-  text-align: end;
-}
-.details .recentMessages table tr td:nth-child(3) {
-  text-align: center;
-}
-.status.delivered {
-  padding: 2px 4px;
-  background: #8de02c;
-  color: var(--white);
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 500;
-}
-.status.pending {
-  padding: 2px 4px;
-  background: #e9b10a;
-  color: var(--white);
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 500;
-}
-.status.return {
-  padding: 2px 4px;
-  background: #f00;
-  color: var(--white);
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 500;
-}
-.status.inProgress {
-  padding: 2px 4px;
-  background: #1795ce;
-  color: var(--white);
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.availableCourses {
-  position: relative;
-  display: grid;
-  min-height: 700px; 
-  padding: 40px;  
-  background: var(--white);
-  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
-  border-radius: 20px;
-}
-.availableCourses .imgBx {
-  position: relative;
-  width: 40px;
-  height: 40px;
-  border-radius: 50px;
-  overflow: hidden;
-}
-.availableCourses .imgBx img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.availableCourses table tr td {
-  padding: 12px 10px;
-}
-.availableCourses table tr td h4 {
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.2rem;
-}
-.availableCourses table tr td h4 span {
-  font-size: 14px;
-  color: var(--black2);
-}
-.availableCourses table tr:hover {
-  background: var(--blue);
-  color: var(--white);
-}
-.availableCourses table tr:hover td h4 span {
-  color: var(--white);
-}
-
 /* ====================== Responsive Design ========================== */
 @media (max-width: 991px) {
   .navigation {
@@ -612,7 +489,7 @@ body {
 
 .profile-picture {
   /* Estilos para la imagen de perfil */
-  display: block; /* o flex, grid, etc. */
+  display: block; 
   margin: auto; /* centra la imagen horizontalmente */
   width: 150px; /* o el tamaño que desees */
   height: 150px; /* para mantener la proporción */
@@ -778,10 +655,6 @@ body {
   align-items: center;
   overflow: hidden;
   margin-top: 50px;
-}
-.unity-container {
-  width: 70%;
-  height: 50%;
 }
 
 /* ====================== Admin ========================== */
