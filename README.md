@@ -30,10 +30,9 @@ A web application for Neoris employees to access training courses, incorporating
    npm install
 
 4. Run the application:
-  ```bash
+   ```bash
    npm start
-   ```
-
+   
 ## Contribution
 
 Contributions are welcome! If you wish to contribute, please fork the repository and submit a pull request.
