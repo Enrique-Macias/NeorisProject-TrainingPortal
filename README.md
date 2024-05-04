@@ -18,13 +18,21 @@ A web application for Neoris employees to access training courses, incorporating
 
 ## How to Run
 
-1. Clone the repository: git clone https://github.com/Enrique-Macias/NeorisProject-TrainingPortal.git
+1. Clone the repository:
+   ```bash
+    git clone https://github.com/Enrique-Macias/NeorisProject-TrainingPortal.git
+2. Navigate to the project directory:
+   ```bash
+   cd NeorisProject-TrainingPortal
    
-2. Navigate to the project directory: cd NeorisProject-TrainingPortal
-   
-3. Install dependencies: npm install
+3. Install dependencies:
+   ```bash
+   npm install
 
-4. Run the application: npm start
+4. Run the application:
+  ```bash
+   npm start
+   ```
 
 ## Contribution
 
