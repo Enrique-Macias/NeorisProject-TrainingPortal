@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-sompatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="icon" id="dynamic-favicon" type="image/png" href="img/neoris-logos/Icon_light.png"> 
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <!-- =============== Navigation ================ -->
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <img src="img/neoris-logos/Icon_light.png" alt="NEORIS" class="logo">
+                        </span>
+                        <img src="img/neoris-logos/NEORIS logo light.png"NEORIS_LOGO" class="logo_secondary">
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Inicio</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="cursos.html">
+                        <span class="icon">
+                            <ion-icon name="flash"></ion-icon>
+                        </span>
+                        <span class="title">Cursos</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="juego.html">
+                        <span class="icon">
+                            <ion-icon name="happy"></ion-icon>
+                        </span>
+                        <span class="title">Juego</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="admin.html">
+                        <span class="icon">
+                            <ion-icon name="person"></ion-icon>
+                        </span>
+                        <span class="title">Admin</span>
+                    </a>
+                </li> 
+
+                <li>
+                    <a href="FAQ.html">
+                        <span class="icon">
+                            <ion-icon name="help"></ion-icon>
+                        </span>
+                        <span class="title">FAQ</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="login.html">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="title">Sign Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- ========================= Main ==================== -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+
+                <h2 class="profile-title">Admin</h2>
+
+                <div class="search">
+                    <label>
+                        <input type="text" id="searchBar" placeholder="Buscar..." onkeyup="searchOnEnter(event)">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+
+                <div class="user">
+                    <a href="miCuenta.html">
+                        <img src="" alt="Profile Picture" id="indexProfileImg">
+                    </a>
+                </div> 
+            </div>
+
+                <!-- ========================= Gestion FAQ Section ==================== -->
+                <div class="main-content">
+                    <div class="faq-container"></div>
+                </div>
+                <div class="white-container">
+                    <h1>Gestión de FAQ</h1>
+                </div>
+    
+                <div class="grid-nav">
+                    <a href="#" class="grid-item" onclick="activarModalEdicion(); return false;">Agregar FAQ</a>
+                    <a href="#" class="grid-item" onclick="activarModalEliminar(); return false;">Eliminar FAQ</a>
+                </div>
+                  
+
+                <!-- Modal Agregar FAQ -->
+                <div id="modalAgregarFAQ" class="estilo-modal">
+                    <div class="contenido-modal">
+                        <span class="cerrar-modal" onclick="cerrarModalEdicion()">&times;</span>
+                        <form id="formularioFAQ">
+                            <!-- Campos del formulario de edición -->
+                            <div class="grupo-formulario">
+                                <label for="preguntaFAQ">Pregunta Frecuente:</label>
+                                <input type="text" id="preguntaFAQ" name="preguntaFAQ" required>
+                            </div>
+                            <div class="grupo-formulario">
+                                <label for="respuestaFAQ">Respuesta:</label>
+                                <textarea id="respuestaFAQ" name="respuestaFAQ" required></textarea>
+                            </div>
+                            <!-- Agrega más campos según sea necesario -->
+                            <div class="acciones-formulario">
+                                <button type="button" onclick="cerrarModalEdicion()">Cancelar</button>
+                                <input type="submit" value="Agregar FAQ">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Modal Eliminar FAQ -->
+                <div id="modalEliminarFAQ" class="estilo-modal">
+                    <div class="contenido-modal">
+                        <span class="cerrar-modal" onclick="cerrarModalEliminar()">&times;</span>
+                        <form id="formularioEliminarFAQ">
+                            <div class="grupo-formulario">
+                                <label for="seleccionarFAQ">Selecciona la FAQ que deseas eliminar:</label>
+                                <select id="seleccionarFAQ" name="seleccionarFAQ" required>
+                                    <!-- Las opciones se llenarán dinámicamente desde JavaScript -->
+                                </select>
+                            </div>
+                            <div class="acciones-formulario">
+                                <button type="button" onclick="cerrarModalEliminar()">Cancelar</button>
+                                <button type="submit">Eliminar FAQ</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+        </div>
+   
+    <script>
+        // Función para activar el modal de edición
+        function activarModalEdicion(faqId) {
+            console.log("Activar modal de edición para el curso ID:", faqId);
+            var modal = document.getElementById('modalAgregarFAQ');
+            modal.style.display = 'block';
+            // Carga aquí los datos del curso si es necesario
+        }
+
+        // Función para cerrar el modal de edición
+        function cerrarModalEdicion() {
+            var modal = document.getElementById('modalAgregarFAQ');
+            modal.style.display = 'none';
+        }
+
+        // Evento para cerrar el modal al hacer clic en la cruz o fuera del modal
+        window.onclick = function(event) {
+            var modal = document.getElementById('modalAgregarFAQ');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+    <script>
+        // Supongamos que tienes un array de objetos FAQ disponibles en tu aplicación
+
+        // Función para activar el modal de eliminación
+        async function activarModalEliminar() {
+            console.log("Activar modal de eliminación de FAQ");
+            var modal = document.getElementById('modalEliminarFAQ');
+            var select = document.getElementById('seleccionarFAQ');
+            
+            try {
+                // Limpiar opciones existentes primero
+                select.innerHTML = '';
+
+                // Obtener FAQs de Firestore y llenar el dropdown
+                const querySnapshot = await getDocs(collection(db, "faqs"));
+                querySnapshot.forEach((docSnapshot) => {
+                    // Aquí debería ser 'doc' en lugar de 'docSnapshot'
+                    var option = document.createElement('option');
+                    option.value = doc.id; // Debe ser 'doc.id' en lugar de 'docSnapshot.id'
+                    option.textContent = doc.data().pregunta; // Debe ser 'doc.data().pregunta' en lugar de 'docSnapshot.data().pregunta'
+                    select.appendChild(option);
+                });
+
+                modal.style.display = 'block';
+            } catch (error) {
+                console.error("Error al cargar FAQs:", error);
+            }
+        }
+
+
+        // Función para cerrar el modal de eliminación
+        function cerrarModalEliminar() {
+            var modal = document.getElementById('modalEliminarFAQ');
+            modal.style.display = 'none';
+        }
+
+        // Reutilizar el mismo manejador de eventos para cerrar el modal cuando se hace clic fuera
+        window.onclick = function(event) {
+            var modalEliminar = document.getElementById('modalEliminarFAQ');
+            if (event.target == modalEliminar) {
+                modalEliminar.style.display = 'none';
+            }
+        }
+
+        // Evento submit para el formulario de eliminación
+        document.getElementById('formularioEliminarFAQ').addEventListener('submit', async function(event) {
+            event.preventDefault();  // Evitar el envío del formulario
+            var faqId = document.getElementById('seleccionarFAQ').value;
+            await eliminarFAQ(faqId);
+            cerrarModalEliminar();
+        });
+    </script>
+
+<!-- Firebase Libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+
+<!-- Firebase Config -->
+<script type="module" src="js/firebase.js"></script>
+
+<!-- Custom Scripts que dependen de Firebase y por lo tanto son módulos -->
+<script type="module" src="js/main.js"></script>
+<script type="module" src="js/busqueda.js"></script>
+<script type="module" src="js/index.js"></script>
+<script type="module" src="js/gestionarfaq.js"></script>
+
+<!-- Ionicons -->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

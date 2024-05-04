@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-sompatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="icon" id="dynamic-favicon" type="image/png" href="img/neoris-logos/Icon_light.png"> 
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" href="styles/tabla-cursos.css">
+</head>
+
+<body>
+    <!-- =============== Navigation ================ -->
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <img src="img/neoris-logos/Icon_light.png" alt="NEORIS" class="logo">
+                        </span>
+                        <!-- <span class="title">NEORIS</span> -->
+                        <img src="img/neoris-logos/NEORIS logo light.png" alt="NEORIS_LOGO" class="logo_secondary">
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Inicio</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="cursos.html">
+                        <span class="icon">
+                            <ion-icon name="flash"></ion-icon>
+                        </span>
+                        <span class="title">Cursos</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="juego.html">
+                        <span class="icon">
+                            <ion-icon name="happy"></ion-icon>
+                        </span>
+                        <span class="title">Juego</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="admin.html">
+                        <span class="icon">
+                            <ion-icon name="person"></ion-icon>
+                        </span>
+                        <span class="title">Admin</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="FAQ.html">
+                        <span class="icon">
+                            <ion-icon name="help"></ion-icon>
+                        </span>
+                        <span class="title">FAQ</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="login.html">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="title">Sign Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- ========================= Main ==================== -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+
+                <h2 class="profile-title">Admin</h2>
+
+                <div class="search">
+                    <label>
+                        <input type="text" id="searchBar" placeholder="Buscar..." onkeyup="searchOnEnter(event)">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+
+                <div class="user">
+                    <a href="miCuenta.html">
+                        <img src="img/customer01.jpg" alt="Profile Picture" id="indexProfileImg">
+                    </a>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <div class="candado-container"></div>
+            </div>
+            <div class="white-container">
+                <h1>Gestionar Cursos</h1>
+            </div>
+
+            <!-- ========================= Gestion Usuarios Section ==================== -->
+            <div class="card-container">
+                <div class="card-user" id="delivered-orders">
+                    <div class="card-title">Total Cursos</div>
+                    <div class="card-content">
+                        <div class="card-number">150</div>
+                        <div class="card-info">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========================= Tabla Usuarios Section ==================== -->
+            <div class="table" id="users_table">
+                <section class="table__header">
+                    <h1>Cursos NEORIS</h1>
+                    <div class="input-group">
+                        <input type="search" placeholder="Buscar cursos...">
+                        <img src="img/table/search.png" alt="">
+                    </div>
+<!-- ========================= Agregar Curso ==================== -->
+                    <div class="icon-container">
+                        <ion-icon name="add-outline" class="add-icon" ></ion-icon>                    
+                    </div>
+
+                </section>
+                <section class="table__body">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th> ID <span class="icon-arrow">&UpArrow;</span></th>
+                                <th> Nombre <span class="icon-arrow">&UpArrow;</span></th>
+                                <th> Categoría <span class="icon-arrow">&UpArrow;</span></th>
+                                <th> Fecha creación <span class="icon-arrow">&UpArrow;</span></th>
+                                <th> Acción </th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td> 1 </td>
+                                <td> Html </td>
+                                <td class="centered"> Programacion </td>
+                                <td class="centered"> 03/10/2024 </td>
+                                <td class="center-icon">
+                                    <ion-icon name="settings-outline" class="edit-icon" onclick="openEditModal('ID_DEL_CURSO');"></ion-icon>
+                                </td>
+                            </tr>
+                        </tbody>
+                </section>
+            </div>
+            <div id="modalBackground" class="modal-background">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <!-- Nombre del curso -->
+                    <form id="addCourseForm">
+                        <div class="form-group">
+                            <label for="addCourseName">Nombre del curso:</label>
+                            <input type="text" id="addCourseName" name="courseName" required>
+                        </div>
+
+                        <!-- Descripción del curso -->
+                        <div class="form-group">
+                            <label for="addCourseDescription">Descripción del curso:</label>
+                            <input type="text" id="addCourseDescription" name="courseName" required>
+                        </div>
+
+                        <!-- Categoría del curso -->
+                        <div class="form-group">
+                            <label for="addCourseCategory">Categoría:</label>
+                            <select id="addCourseCategory" name="courseCategory" required>
+                                <option value="PromptEngineering">Prompt Engineering</option>
+                                <option value="GenAI">GenAI</option>
+                                <option value="GenAIFundamentals">GenAIFundamentals</option>
+                                <option value="GitHubCopilot">GitHub Copilot</option>
+                                <option value="GitHubAdvancedSecurity">GitHub Advanced Security</option>
+                                <!-- ... más opciones ... -->
+                            </select>
+                        </div>
+
+                        <!-- Objetivos de aprendizaje -->
+                        <div class="form-group">
+                            <label for="addLearningObjectives">Hipervínculo del curso:</label>
+                            <textarea id="addLearningObjectives" name="learningObjectives" required></textarea>
+                        </div>
+
+                        <!-- Publicar/Despublicar curso -->
+                        <div class="form-group toggle-switch">
+                            <label for="toggleCoursePublication">Publicar Curso:</label>
+                            <input type="checkbox" id="toggleCoursePublication" name="coursePublication" checked>
+                        </div>
+                        <div class="form-group">
+                            <label for="coursePic">Imagen de Portada:</label>
+                            <img src="/img/cursos-portada/curso1.jpg" alt="Course Picture" id="courseImgPreview">
+                            <input type="file"  id="coursePic" accept="image/*" required onchange="handleFileInput();">
+                        </div>
+
+                        <!-- Botones de acción -->
+                        <div class="form-actions">
+                            <button type="button" onclick="closeAddCourseModal()">Cancelar</button>
+                            <button type="submit" >Create Course</button>
+                        </div>
+                    </form>
+                </div>  
+            </div>
+        </div>
+    </div>
+    <!-- =========== Scripts =========  -->
+    <script src="js/main.js"></script>
+    <script src="js/busqueda.js"></script>
+    <script src="js/users-table.js"></script>
+    <script type="module" src="/js/index.js"></script>
+    <script type="module" src="/js/gestionarCursos.js"></script>
+    <!-- ====== ionicons ======= -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
